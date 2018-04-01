@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+  <h1>Query Parameters:</h1> <button type="button" style = "margin-left:20px;" target="_blank" onclick="location.href = '/noble-markets-realtime-order-book';" class="btn btn-primary">Go to Real Time Order Book</button>
+  </div>
+   <form [formGroup]="rForm" (ngSubmit)="addPost(rForm.value)">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Price(Optional)</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter price ex. 7000" formControlName="GTprice">
+    </div>
+    <div class="form-group">
+      <label for="exampleSelect1">Select Exchange</label>
+      <select class="form-control" id="exampleSelect1" formControlName="exchange">
+        <option value="All">All</option>
+        <option value='Bitfinex'>Bitfinex</option>
+        <option value='Gdax'>Gdax</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary" value="Submit form">Submit</button>
+  </form>
+
+  <div *ngIf="found==true">
+    <h3>OrderBook Data from SQLite:</h3>
+    <span>
+      {{ snapshotData | json }}
+    </span>
+  </div>
+  <div *ngIf="found==false">
+    <span>
+      Sorry, Nothing matches those queries in the database!
+    </span>
+  </div>
+
+</div>

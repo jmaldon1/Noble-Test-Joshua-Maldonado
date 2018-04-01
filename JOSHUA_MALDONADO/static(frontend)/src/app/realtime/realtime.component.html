@@ -1,0 +1,13 @@
+<div class="container">
+	<h1>Real Time Order Book from Gdax and Bitfinex:</h1>
+	<div class="row">
+	    <div class = "well" id="scrolldown" style="border-style: solid;width: 500px;height: 500px;overflow: scroll;">
+	        <div *ngFor="let item of dataArray">
+	           <span>
+	            Price: {{item.price}} <span *ngIf="item.count">| Count: {{item.count}} </span>|<span style="color:green;" *ngIf="item.buy"> Buy: {{item.buy}} </span> <span style="color:red;" *ngIf="item.sell"> Sell: {{item.sell}}</span> 
+	            </span>
+	        </div>
+	    </div>
+	</div>
+	<button type="button" style="margin-top:20px;"onclick="location.href = '/noble-markets-order-book-snapshot';" class="btn btn-primary">Go to Order Book Snapshot</button>
+</div>
