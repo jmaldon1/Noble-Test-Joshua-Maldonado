@@ -87,3 +87,12 @@ ProjectFolder/
 15. In a second terminal window:
 
     ng build --dev --watch
+
+# How to create DataBase:
+Create a DB with SQLite:
+1. while inside of the Flask-Angular4
+
+run 'python3'
+type 'from app import db' in python shell
+type 'db.create_all()'
+type 'exit()'
